@@ -1,50 +1,51 @@
-<?php /* Template Name: Homepage */ ?>
-<?php get_header() ?>
-<?php the_post() ?>
+<?php 
+  /* Template Name: Homepage */ 
+  get_header() 
+  the_post()
+?>
 <main id="main">
   <!-- ======= Start Hero Section ======= -->
   <?php if (have_rows('header_section')) : ?>
     <div class="swiper-container mySwiper">
-      <div class="swiper-wrapper">
-        <?php while (have_rows('header_section')) : the_row(); ?>
-          <?php
-          $image = get_sub_field('slider_image');
-          $header_text = get_sub_field('header_text');
-          $sub_text_1 = get_sub_field('sub_text_1');
-          $button_link = get_sub_field('button_link');
-          $header_button_text = get_sub_field('header_button_text');
-          ?>
+        <div class="swiper-wrapper">
+              <?php while (have_rows('header_section')) : the_row(); ?>
+                <?php
+                $image = get_sub_field('slider_image');
+                $header_text = get_sub_field('header_text');
+                $sub_text_1 = get_sub_field('sub_text_1');
+                $button_link = get_sub_field('button_link');
+                $header_button_text = get_sub_field('header_button_text');
+                ?>
 
-          <div class="swiper-slide">
-            <section id="hero" class="d-flex justify-content-center align-items-center"> -->
-              <img src="<?php the_sub_field('slider_image'); ?>" class="img-fluid" alt="">
-              <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-                <h1><?php the_sub_field('header_text'); ?><br><?php the_sub_field('sub_text_1'); ?></h1>
-                <h2><?php the_sub_field('sub_text-3'); ?></h2>
-                <a href="<?php the_sub_field('button_link'); ?>" class="btn-get-started-down"><?php the_sub_field('header_button_text'); ?></a>
-
-              </div>
-            </section>
-          </div>
-        <?php endwhile; ?>
+                <div class="swiper-slide">
+                    <section id="hero" class="d-flex justify-content-center align-items-center"> -->
+                        <img src="<?php the_sub_field('slider_image'); ?>" class="img-fluid" alt="">
+                          <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+                              <h1><?php the_sub_field('header_text'); ?><br><?php the_sub_field('sub_text_1'); ?></h1>
+                              <h2><?php the_sub_field('sub_text-3'); ?></h2>
+                              <a href="<?php the_sub_field('button_link'); ?>" class="btn-get-started-down"><?php the_sub_field('header_button_text'); ?></a>
+                          </div>
+                    </section>
+                </div>
+              <?php endwhile; ?>
+         </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
     </div>
   <?php endif; ?>
   <script>
-    var swiper = new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
   </script>
   <!-- ======= End Hero Section ======= -->
   <main id="main">
@@ -275,7 +276,8 @@
         </div>
 
       </div>
-    </section><!-- End Trainers Section -->
+    </section>
+    <!-- End Trainers Section -->
  
   </main>
 
